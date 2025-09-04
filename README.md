@@ -1,6 +1,6 @@
 # Homebrew Rules
 
-Un sistema de reglas personalizadas para Dungeons & Dragons, presentado como una página web interactiva con reglas colapsables.
+Un sistema de reglas personalizadas para Dungeons & Dragons, presentado como una página web interactiva con reglas colapsables. Accesible desde [aquí](https://danielquijada.github.io/dnd-homebrew-rules/reglas.html).
 
 ## 📋 Descripción
 
