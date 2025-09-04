@@ -47,7 +47,18 @@ Cada regla tiene la siguiente estructura:
 
 El objeto `content` puede contener diferentes tipos de contenido:
 
-#### 1. Contenido con Subtítulo y Secciones
+#### 1. Contenido con Párrafos Simples
+
+```json
+"content": {
+  "paragraphs": [
+    "Primer párrafo de texto.",
+    "Segundo párrafo de texto."
+  ]
+}
+```
+
+#### 2. Contenido con Subtítulo y Secciones
 
 ```json
 "content": {
@@ -68,17 +79,6 @@ El objeto `content` puede contener diferentes tipos de contenido:
 | `title` | string | ✅ | Título de la sección (aparece en negrita) |
 | `note` | string | ❌ | Nota adicional (ej: "(nuevo)") |
 | `description` | string | ✅ | Descripción completa de la sección |
-
-#### 2. Contenido con Párrafos Simples
-
-```json
-"content": {
-  "paragraphs": [
-    "Primer párrafo de texto.",
-    "Segundo párrafo de texto."
-  ]
-}
-```
 
 #### 3. Contenido con Lista
 
