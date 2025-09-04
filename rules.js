@@ -20,7 +20,7 @@ function renderRules(data) {
     const titleElement = document.getElementById('title');
     titleElement.innerHTML = data.title;
     if (data.note) {
-        titleElement.innerHtml += `<note>${data.note}</note>`;
+        titleElement.innerHTML += `<note>${data.note}</note>`;
     }
     const rulesList = document.getElementById('rules-list');
     
