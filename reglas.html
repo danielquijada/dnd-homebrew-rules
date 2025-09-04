@@ -149,7 +149,7 @@
         
         function renderRules(data) {
             const titleElement = document.getElementById('title');
-            titleElement.innerHTML = 'data.title'
+            titleElement.innerHTML = data.title;
             if (data.note) {
                 titleElement.innerHtml += `<note>${data.note}</note>`;
             }
