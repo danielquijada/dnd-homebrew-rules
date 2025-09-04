@@ -1,0 +1,67 @@
+{
+  "title": "Reglas",
+  "rules": [
+    {
+      "id": "descanso",
+      "title": "Regla: Descanso",
+      "content": {
+        "subtitle": "Nuevas definiciones de descanso:",
+        "sections": [
+          {
+            "title": "Descanso rápido",
+            "note": "(nuevo)",
+            "description": "Periodo de inactividad, de al menos 1 hora de duración, durante el cual un personaje no hace nada más extenuante que comer, beber, leer y atender heridas. Máximo 1 por descanso corto. Pueden utilizar un dado de golpe para curarse el dado de golpe + CON."
+          },
+          {
+            "title": "Descanso corto",
+            "description": "Periodo de tiempo de inactividad de al menos 8 horas de duración, durante el cual un personaje duerme o realiza actividad ligera por no más de 2 horas."
+          },
+          {
+            "title": "Descanso largo",
+            "description": "Periodo de inactividad de al menos un día entero, haciendo solo actividad ligera (leer, hablar, comer, pasear, etc), terminando con una noche ininterrumpida de sueño en condiciones de comodidad (por ejemplo, en una posada)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "inspiracion",
+      "title": "Regla: Inspiración",
+      "content": {
+        "paragraphs": [
+          "La inspiración solo dura durante la sesión en la que se da.",
+          "Se puede utilizar en cualquier momento para rerollear un check de d20, quedándose con el mejor de los 2 resultados."
+        ]
+      }
+    },
+    {
+      "id": "subir-nivel",
+      "title": "Regla: Subir de nivel",
+      "content": {
+        "paragraphs": [
+          "Se da experiencia por objetivos cumplidos en la misión.",
+          "Además, algunos objetivos secundarios pueden dar experiencia adicional."
+        ]
+      }
+    },
+    {
+      "id": "pociones-combate",
+      "title": "Regla: Utilización de Pociones en Combate",
+      "content": {
+        "paragraphs": [
+          "La curación, cuando se utiliza en uno mismo, dependerá de cómo se utilice:"
+        ],
+        "list": [
+          {
+            "title": "Acción de Bono",
+            "description": "Curación normal."
+          },
+          {
+            "title": "Acción",
+            "description": "Cura siempre el máximo."
+          }
+        ],
+        "footer": "Utilizar una poción en otra persona requerirá siempre una acción y realizará la curación normal."
+      }
+    }
+  ]
+}
