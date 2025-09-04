@@ -80,16 +80,30 @@
             margin-bottom: 10px;
         }
         
-        .rule-content ul {
+        .rule-content .content-list {
             margin-left: 20px;
             list-style: disc;
         }
         
-        .rule-content li {
+        .rule-content .content-list li {
             background: none;
             box-shadow: none;
             padding: 5px 0;
             margin-bottom: 5px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .error {
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
         }
         
         hr {
@@ -100,58 +114,99 @@
     </style>
 </head>
 <body>
-    <h2>Reglas</h2>
-    
-    <ul>
-        <li>
-            <span class="rule-title">Regla: Descanso</span>
-            <button class="toggle-btn" onclick="toggleRule(this)" title="Mostrar/Ocultar regla">+</button>
-            <div class="rule-content">
-                <h3>Nuevas definiciones de descanso:</h3>
-                
-                <p><strong>Descanso rápido</strong> (nuevo): Periodo de inactividad, de al menos 1 hora de duración, durante el cual un personaje no hace nada más extenuante que comer, beber, leer y atender heridas. Máximo 1 por descanso corto. Pueden utilizar un dado de golpe para curarse el dado de golpe + CON.</p>
-                
-                <p><strong>Descanso corto:</strong> Periodo de tiempo de inactividad de al menos 8 horas de duración, durante el cual un personaje duerme o realiza actividad ligera por no más de 2 horas.</p>
-                
-                <p><strong>Descanso largo:</strong> Periodo de inactividad de al menos un día entero, haciendo solo actividad ligera (leer, hablar, comer, pasear, etc), terminando con una noche ininterrumpida de sueño en condiciones de comodidad (por ejemplo, en una posada).</p>
-            </div>
-        </li>
-        
-        <li>
-            <span class="rule-title">Regla: Inspiración</span>
-            <button class="toggle-btn" onclick="toggleRule(this)" title="Mostrar/Ocultar regla">+</button>
-            <div class="rule-content">
-                <p>La inspiración solo dura durante la sesión en la que se da.</p>
-                <p>Se puede utilizar en cualquier momento para rerollear un check de d20, quedándose con el mejor de los 2 resultados.</p>
-            </div>
-        </li>
-        
-        <li>
-            <span class="rule-title">Regla: Subir de nivel</span>
-            <button class="toggle-btn" onclick="toggleRule(this)" title="Mostrar/Ocultar regla">+</button>
-            <div class="rule-content">
-                <p>Se da experiencia por objetivos cumplidos en la misión.</p>
-                <p>Además, algunos objetivos secundarios pueden dar experiencia adicional.</p>
-            </div>
-        </li>
-        
-        <li>
-            <span class="rule-title">Regla: Utilización de Pociones en Combate</span>
-            <button class="toggle-btn" onclick="toggleRule(this)" title="Mostrar/Ocultar regla">+</button>
-            <div class="rule-content">
-                <p>La curación, cuando se utiliza en uno mismo, dependerá de cómo se utilice:</p>
-                <ul>
-                    <li><strong>Acción de Bono:</strong> Curación normal.</li>
-                    <li><strong>Acción:</strong> Cura siempre el máximo.</li>
-                </ul>
-                <p>Utilizar una poción en otra persona requerirá siempre una acción y realizará la curación normal.</p>
-            </div>
-        </li>
-    </ul>
-    
-    <hr>
+    <div id="loading" class="loading">Cargando reglas...</div>
+    <div id="error" class="error" style="display: none;"></div>
+    <div id="content" style="display: none;">
+        <h2 id="title"></h2>
+        <ul id="rules-list"></ul>
+        <hr>
+    </div>
     
     <script>
+        async function loadRules() {
+            try {
+                const response = await fetch('rules.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                renderRules(data);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } catch (error) {
+                console.error('Error loading rules:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = 'Error al cargar las reglas. Por favor, recarga la página.';
+            }
+        }
+        
+        function renderRules(data) {
+            document.getElementById('title').textContent = data.title;
+            const rulesList = document.getElementById('rules-list');
+            
+            data.rules.forEach(rule => {
+                const li = document.createElement('li');
+                
+                const titleSpan = document.createElement('span');
+                titleSpan.className = 'rule-title';
+                titleSpan.textContent = rule.title;
+                
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'toggle-btn';
+                toggleBtn.textContent = '+';
+                toggleBtn.title = 'Mostrar/Ocultar regla';
+                toggleBtn.onclick = () => toggleRule(toggleBtn);
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'rule-content';
+                contentDiv.innerHTML = renderRuleContent(rule.content);
+                
+                li.appendChild(titleSpan);
+                li.appendChild(toggleBtn);
+                li.appendChild(contentDiv);
+                rulesList.appendChild(li);
+            });
+        }
+        
+        function renderRuleContent(content) {
+            let html = '';
+            
+            if (content.subtitle) {
+                html += `<h3>${content.subtitle}</h3>`;
+            }
+            
+            if (content.sections) {
+                content.sections.forEach(section => {
+                    html += `<p><strong>${section.title}</strong>`;
+                    if (section.note) {
+                        html += ` ${section.note}`;
+                    }
+                    html += `: ${section.description}</p>`;
+                });
+            }
+            
+            if (content.paragraphs) {
+                content.paragraphs.forEach(paragraph => {
+                    html += `<p>${paragraph}</p>`;
+                });
+            }
+            
+            if (content.list) {
+                html += '<ul class="content-list">';
+                content.list.forEach(item => {
+                    html += `<li><strong>${item.title}:</strong> ${item.description}</li>`;
+                });
+                html += '</ul>';
+            }
+            
+            if (content.footer) {
+                html += `<p>${content.footer}</p>`;
+            }
+            
+            return html;
+        }
+        
         function toggleRule(button) {
             const content = button.nextElementSibling;
             const isVisible = content.classList.contains('show');
@@ -166,6 +221,9 @@
                 button.title = 'Ocultar regla';
             }
         }
+        
+        // Load rules when page loads
+        document.addEventListener('DOMContentLoaded', loadRules);
     </script>
 </body>
 </html>
