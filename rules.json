@@ -3,7 +3,7 @@
   "rules": [
     {
       "id": "descanso",
-      "title": "Regla: Descanso",
+      "title": "Descanso",
       "content": {
         "subtitle": "Nuevas definiciones de descanso:",
         "sections": [
@@ -25,7 +25,7 @@
     },
     {
       "id": "inspiracion",
-      "title": "Regla: Inspiración",
+      "title": "Inspiración",
       "content": {
         "paragraphs": [
           "La inspiración solo dura durante la sesión en la que se da.",
@@ -35,7 +35,7 @@
     },
     {
       "id": "subir-nivel",
-      "title": "Regla: Subir de nivel",
+      "title": "Subir de nivel",
       "content": {
         "paragraphs": [
           "Se da experiencia por objetivos cumplidos en la misión.",
@@ -45,7 +45,7 @@
     },
     {
       "id": "pociones-combate",
-      "title": "Regla: Utilización de Pociones en Combate",
+      "title": "Utilización de Pociones en Combate",
       "content": {
         "paragraphs": [
           "La curación, cuando se utiliza en uno mismo, dependerá de cómo se utilice:"
