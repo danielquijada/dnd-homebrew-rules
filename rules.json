@@ -1,5 +1,6 @@
 {
-  "title": "Reglas",
+  "title": "Reglas Personalizadas",
+  "note": "by Dani"
   "rules": [
     {
       "id": "descanso",
