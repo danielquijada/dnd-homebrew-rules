@@ -204,7 +204,11 @@
             if (content.list) {
                 html += '<ul class="content-list">';
                 content.list.forEach(item => {
-                    html += `<li><strong>${item.title}:</strong> ${item.description}</li>`;
+                    html += `<li><strong>${item.title}</strong>`;
+                    if (item.note) {
+                        html += ` <note>${item.note}</note>`;
+                    }
+                    html += `: ${item.description}</li>`;
                 });
                 html += '</ul>';
             }
