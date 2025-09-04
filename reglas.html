@@ -217,7 +217,7 @@
         }
         
         function toggleRule(button) {
-            const content = button.nextElementSibling;
+            const content = button.parentElement.nextElementSibling;
             const isVisible = content.classList.contains('show');
             
             if (isVisible) {
