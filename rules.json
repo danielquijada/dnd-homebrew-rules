@@ -19,7 +19,7 @@
           },
           {
             "title": "Descanso largo",
-            "description": "Periodo de inactividad de al menos <b>un día entero</b>, realizando solo actividad ligera (leer, hablar, comer, pasear, etc), terminando con una noche ininterrumpida de sueño en condiciones de comodidad (por ejemplo, en una posada) y sin estar en condiciones de peligro inminente (esto es, sin necesidad de estar en tensión o alerta).<i>El personaje recupera todos sus dados de golpe</i>"
+            "description": "Periodo de inactividad de al menos <b>un día entero</b>, realizando solo actividad ligera (leer, hablar, comer, pasear, etc), terminando con una noche ininterrumpida de sueño en condiciones de comodidad (por ejemplo, en una posada) y sin estar en condiciones de peligro inminente (esto es, sin necesidad de estar en tensión o alerta). <i>El personaje recupera todos sus dados de golpe.</i>"
           }
         ]
       }
