@@ -15,11 +15,11 @@
           },
           {
             "title": "Descanso corto",
-            "description": "Periodo de tiempo de inactividad de al menos 8 horas de duración, durante el cual un personaje duerme o realiza actividad ligera por no más de 2 horas."
+            "description": "Periodo de tiempo de inactividad de al menos <b>8 horas de duración</b>, durante el cual un personaje duerme o realiza actividad ligera por no más de 2 horas."
           },
           {
             "title": "Descanso largo",
-            "description": "Periodo de inactividad de al menos un día entero, realizando solo actividad ligera (leer, hablar, comer, pasear, etc), terminando con una noche ininterrumpida de sueño en condiciones de comodidad (por ejemplo, en una posada) y sin estar en condiciones de peligro inminente (esto es, sin necesidad de estar en tensión o alerta)."
+            "description": "Periodo de inactividad de al menos <b>un día entero</b>, realizando solo actividad ligera (leer, hablar, comer, pasear, etc), terminando con una noche ininterrumpida de sueño en condiciones de comodidad (por ejemplo, en una posada) y sin estar en condiciones de peligro inminente (esto es, sin necesidad de estar en tensión o alerta).<i>El personaje recupera todos sus dados de golpe</i>"
           }
         ]
       }
