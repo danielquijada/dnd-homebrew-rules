@@ -11,7 +11,7 @@
           {
             "title": "Descanso rápido",
             "note": "nuevo",
-            "description": "Periodo de inactividad, de al menos 1 hora de duración, durante el cual un personaje no hace nada más extenuante que comer, beber, leer y atender heridas. Máximo 1 por descanso corto. Pueden utilizar un dado de golpe para curarse el dado de golpe + CON."
+            "description": "Periodo de inactividad, de al menos <b>1 hora de duración</b>, durante el cual un personaje no hace nada más extenuante que comer, beber, leer y atender heridas. Máximo 1 por descanso corto. <i>Pueden utilizar un dado de golpe para curarse el dado de golpe + CON.</i>"
           },
           {
             "title": "Descanso corto",
