@@ -45,8 +45,8 @@
       }
     },
     {
-      "id": "pociones-combate",
-      "title": "Utilización de Pociones en Combate",
+      "id": "uso-pociones",
+      "title": "Utilización de Pociones",
       "content": {
         "paragraphs": [
           "La curación, cuando se utiliza en uno mismo, dependerá de cómo se utilice:"
@@ -62,6 +62,26 @@
           }
         ],
         "footer": "Utilizar una poción en otra persona requerirá siempre una acción y realizará la curación normal."
+      }
+    },
+    {
+      "id": "identificar-dificil",
+      "title": "Identificación de Objetos Mágicos",
+      "content": {
+        "paragraphs": [
+          "Identificar objetos mágicos por medios no mágicos es más difícil:"
+        ],
+        "list": [
+          {
+            "title": "Pociones",
+            "description": "Se puede hacer con un sorbo, pero es suficiente para causar un efecto reducido del efecto, si es nocivo (en caso de ser beneficioso, no reciben ningún efecto)."
+          },
+          {
+            "title": "Objetos",
+            "description": "Utilizar un descanso corto en contacto con el objeto no da todos los detalles, solo una descripción ligera del efecto mágico. Además, esto implica la utilización del tiempo completo de descanso, por lo que no se obtienen los beneficios del mismo."
+          }
+        ],
+        "footer": "El hechizo de identificar sigue funcionando igual."
       }
     }
   ]
